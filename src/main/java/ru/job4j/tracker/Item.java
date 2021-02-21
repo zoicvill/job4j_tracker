@@ -23,7 +23,6 @@ public class Item {
         this.id = id;
     }
 
-
     public Item(int id, String iName){
         this.id = id;
         this.name = iName;
@@ -45,3 +44,4 @@ public class Item {
         this.name = name;
     }
 }
+
