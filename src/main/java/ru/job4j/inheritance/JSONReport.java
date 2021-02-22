@@ -6,8 +6,8 @@ public class JSONReport extends TextReport {
     public String generate(String name, String text) {
 //      return "{ \n \"name\" : " + "\"" + name +"\"" +"," + "\n \"text\" : " + "\"" + text +"\"" + "\n}";
         return "{ " + System.lineSeparator()
-                + " \"" + name + "\"" + " : " + "\"" + "name" + "\"" + "," + System.lineSeparator()
-                + " \"" + text + "\"" + " : " + "\"" + "text" + "\"" + System.lineSeparator()
+                + " \"" + "name" + "\"" + " : " + "\"" + name + "\"" + "," + System.lineSeparator()
+                + " \"" + "text" + "\"" + " : " + "\"" + text + "\"" + System.lineSeparator()
                 + "}";
     }
 }
