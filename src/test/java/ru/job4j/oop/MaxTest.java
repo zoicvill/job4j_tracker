@@ -32,6 +32,12 @@ public class MaxTest{
         assertThat(res,is(567));
 
     }
+    @Test
+    public void whenMaxTestFourOne(){
+        int res = Max.max(3430,232,567,1);
+        assertThat(res,is(3430));
+
+    }
 
 
 }
