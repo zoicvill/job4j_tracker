@@ -36,16 +36,8 @@ public class Tracker {
         }
         return rsl;
     }
+
     public Item[] findAll() {
-        Item [] bufIt = new Item[size];
-        int resize = 0;
-        for (int i = 0; i < size; i++) {
-            Item item = items[i];
-            if (item != null) {
-                bufIt[resize] = item;
-                resize++;
-            }
-        }
-        return Arrays.copyOf(bufIt, resize);
+        return Arrays.copyOf(items, size);
     }
 }
