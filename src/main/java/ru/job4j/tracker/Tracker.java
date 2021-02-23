@@ -22,22 +22,35 @@ public class Tracker {
                 digit++;
             }
         }
-        return Arrays.copyOf(items,digit);
+        return Arrays.copyOf(items, digit);
     }
 
     public Item findById(int id) {
-        Item rsl = null;
+        int ind = indexOf(id);
+        return ind != -1 ? items[ind] : null;
+    }
+
+    public Item[] findAll() {
+        return Arrays.copyOf(items, size);
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
     }
 
-    public Item[] findAll() {
-        return Arrays.copyOf(items, size);
+    public boolean replace(int id, Item item) {
+        int i = indexOf(id);
+        if (i == -1) {
+            return false;
+        } else items[i] = item;
+        items[i].setId(id);
+        return true;
     }
 }
