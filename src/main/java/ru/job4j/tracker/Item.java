@@ -8,6 +8,23 @@ public class Item {
     private String name;
     private LocalDateTime created = LocalDateTime.now();
 
+    public Item() {
+
+    }
+
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item(int id) {
+        this.id = id;
+    }
+
+    public Item(int id, String iName) {
+        this.id = id;
+        this.name = iName;
+    }
+
     public LocalDateTime getCreated() {
         return created;
     }
@@ -20,23 +37,6 @@ public class Item {
                 ", created=" +
                 created.format(DateTimeFormatter.ofPattern("dd MMMM EEEE yyyy HH:mm:ss")) +
                 '}';
-    }
-
-    public Item(){
-
-    }
-
-    public Item(String name) {
-        this.name = name;
-    }
-
-    public Item(int id){
-        this.id = id;
-    }
-
-    public Item(int id, String iName){
-        this.id = id;
-        this.name = iName;
     }
 
     public int getId() {
