@@ -47,9 +47,9 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int i = indexOf(id);
-        if (i == -1) {
-            return false;
-        } else items[i] = item;
+        if (i == -1){
+            return false;}
+        items[i] = item;
         items[i].setId(id);
         return true;
     }
