@@ -31,12 +31,11 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return "Item " +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", created=" +
-                created.format(DateTimeFormatter.ofPattern("dd MMMM EEEE yyyy HH:mm:ss")) +
-                '}';
+                created.format(DateTimeFormatter.ofPattern("dd MMMM EEEE yyyy HH:mm:ss"));
     }
 
     public int getId() {
