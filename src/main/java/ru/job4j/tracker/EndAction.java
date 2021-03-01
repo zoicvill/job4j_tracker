@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 public class EndAction implements UserAction{
+
     @Override
     public String name() {
         return "=== Exit Program ===";
