@@ -1,10 +1,10 @@
 package ru.job4j.tracker;
 
 public class CreateAction implements UserAction{
-    private final Output out;
+    private final Output myOut;
 
-    public CreateAction(Output out) {
-        this.out = out;
+    public CreateAction(Output myOut) {
+        this.myOut = myOut;
     }
 
     @Override

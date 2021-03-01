@@ -4,7 +4,7 @@ public class StubOutput implements Output{
     private final StringBuilder buffer = new StringBuilder();
 
     @Override
-    public void println(Object obj) {
+    public void myPrintln(Object obj) {
         if (obj != null) {
             buffer.append(obj.toString());
         } else {

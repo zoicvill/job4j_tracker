@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class ConsoleOutput implements Output{
     @Override
-    public void println(Object obj) {
+    public void myPrintln(Object obj) {
         System.out.println(obj);
     }
 }

@@ -1,12 +1,10 @@
 package ru.job4j.tracker;
 
-import static java.lang.System.out;
-
 public class DeletedAction implements UserAction{
-    private final Output out;
+    private final Output myOut;
 
-    public DeletedAction(Output out) {
-        this.out = out;
+    public DeletedAction(Output myOut) {
+        this.myOut = myOut;
     }
 
     @Override
@@ -18,8 +16,8 @@ public class DeletedAction implements UserAction{
     public boolean execute(Input input, Tracker tracker) {
         int id = input.askInt("Enter id: ");
         if (tracker.delete(id)) {
-            out.println("Deleted true ");
-        } else out.println("Deleted false");
+            myOut.myPrintln("Deleted true ");
+        } else myOut.myPrintln("Deleted false");
         return true;
     }
 }
