@@ -1,10 +1,10 @@
 package ru.job4j.tracker;
 
 public class FindActionByName implements UserAction {
-    private final Output myOut;
+    private final Output output;
 
-    public FindActionByName(Output myOut) {
-        this.myOut = myOut;
+    public FindActionByName(Output output) {
+        this.output = output;
     }
 
     @Override
@@ -18,10 +18,10 @@ public class FindActionByName implements UserAction {
         Item[] item = tracker.findByName(name);
         if (item.length > 0) {
             for (Item value : item) {
-                myOut.myPrintln(value.toString());
+                output.outPrintln(value.toString());
             }
         } else {
-            myOut.myPrintln("Find false");
+            output.outPrintln("Find false");
         }
         return true;
     }

@@ -2,10 +2,10 @@ package ru.job4j.tracker;
 
 
 public class StartUI {
-    private final Output myOut;
+    private final Output output;
 
-    public StartUI(Output myOut) {
-        this.myOut = myOut;
+    public StartUI(Output output) {
+        this.output = output;
     }
 
     public static void main(String[] args) {
@@ -32,9 +32,9 @@ public class StartUI {
     }
 
     private void showMenu(UserAction[] actions) {
-        myOut.myPrintln("Menu.");
+        output.outPrintln("Menu.");
         for (int index = 0; index < actions.length; index++) {
-            myOut.myPrintln(index + ". " + actions[index].name());
+            output.outPrintln(index + ". " + actions[index].name());
         }
     }
 

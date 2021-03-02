@@ -2,10 +2,10 @@ package ru.job4j.tracker;
 
 
 public class ShowAction implements UserAction {
-    private final Output myOut;
+    private final Output output;
 
-    public ShowAction(Output out) {
-        this.myOut = out;
+    public ShowAction(Output output) {
+        this.output = output;
     }
 
     @Override
@@ -17,7 +17,7 @@ public class ShowAction implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         Item[] item = tracker.findAll();
         for (Item value : item) {
-            myOut.myPrintln(value.toString());
+            output.outPrintln(value.toString());
         }
         return true;
     }
