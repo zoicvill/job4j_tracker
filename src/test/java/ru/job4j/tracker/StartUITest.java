@@ -94,17 +94,17 @@ public class StartUITest {
     }
 
     @Test
-    public void FindByNameAction(){
+    public void FindByNameAction() {
         Tracker tracker = new Tracker();
-        Item first = tracker.add(new Item(0,"First"));
+        Item first = tracker.add(new Item(0, "First"));
         Output myOut = new StubOutput();
-        Input in = new StubInput(new String[]{"0","First", "1"});
+        Input in = new StubInput(new String[]{"0", "First", "1"});
         UserAction[] actions = {
                 new FindActionByName(myOut),
                 new EndAction()
         };
-        new StartUI(myOut).init(in,tracker,actions);
-        assertThat(myOut.toString(),is("Menu." + System.lineSeparator() +
+        new StartUI(myOut).init(in, tracker, actions);
+        assertThat(myOut.toString(), is("Menu." + System.lineSeparator() +
                 "0. === Find items by name ===" + System.lineSeparator() +
                 "1. === Exit Program ===" + System.lineSeparator() +
                 first + System.lineSeparator() + "Menu." + System.lineSeparator() +
@@ -112,22 +112,45 @@ public class StartUITest {
                 "1. === Exit Program ===" + System.lineSeparator() + ""));
 
     }
+
     @Test
-    public void  FindByIdAction(){
+    public void FindByIdAction() {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item(0, "first"));
         Output myOut = new StubOutput();
-        Input in = new StubInput(new String[]{"0",String.valueOf(item.getId()),"1"});
-        UserAction [] actions = {
+        Input in = new StubInput(new String[]{"0", String.valueOf(item.getId()), "1"});
+        UserAction[] actions = {
                 new FindActionById(myOut),
                 new EndAction()
         };
-        new StartUI(myOut).init(in,tracker,actions);
-        assertThat(myOut.toString(),is("Menu." + System.lineSeparator() +
+        new StartUI(myOut).init(in, tracker, actions);
+        assertThat(myOut.toString(), is("Menu." + System.lineSeparator() +
                 "0. === Find item by Id ===" + System.lineSeparator() +
                 "1. === Exit Program ===" + System.lineSeparator() +
                 item + System.lineSeparator() + "Menu." + System.lineSeparator() +
                 "0. === Find item by Id ===" + System.lineSeparator() +
                 "1. === Exit Program ===" + System.lineSeparator() + ""));
+    }
+
+    @Test
+    public void whenInvalidExit() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[]{"1", "0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new EndAction()
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                String.format(
+                        "Menu.%n"
+                                + "0. === Exit Program ===%n"
+                                + "Ошибка ввода введите число от 0 до 0%n"
+                                + "Menu.%n"
+                                + "0. === Exit Program ===%n"
+                )
+        ));
     }
 }
