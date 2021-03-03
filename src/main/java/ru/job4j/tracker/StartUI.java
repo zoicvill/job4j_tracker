@@ -10,7 +10,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Output myOut = new ConsoleOutput();
-        Input input = new ConsoleInput();
+        Input input = new ValidateInput();
 
         Tracker tracker = new Tracker();
         UserAction[] actions = {
@@ -26,6 +26,10 @@ public class StartUI {
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
+            if (select < 0 || select >= actions.length){
+                output.outPrintln("Ошибка ввода введите число от 0 до " + (actions.length-1));
+                continue;
+            }
             UserAction actionInit = actions[select];
             run = actionInit.execute(input, tracker);
         }
