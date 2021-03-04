@@ -8,10 +8,10 @@ public class StartUI {
         this.output = output;
     }
 
+
     public static void main(String[] args) {
         Output myOut = new ConsoleOutput();
-        Input input = new ValidateInput(myOut,new ConsoleInput());
-
+        Input input = new ValidateInput(myOut, new ConsoleInput());
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(myOut), new ShowAction(myOut), new ReplaceAction(myOut),
@@ -19,6 +19,8 @@ public class StartUI {
                 new EndAction()
         };
         new StartUI(myOut).init(input, tracker, actions);
+
+        SingleTracker singleTracker = SingleTracker.getSingle();
     }
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
@@ -26,8 +28,8 @@ public class StartUI {
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
-            if (select < 0 || select >= actions.length){
-                output.outPrintln("Ошибка ввода введите число от 0 до " + (actions.length-1));
+            if (select < 0 || select >= actions.length) {
+                output.outPrintln("Ошибка ввода введите число от 0 до " + (actions.length - 1));
                 continue;
             }
             UserAction actionInit = actions[select];
