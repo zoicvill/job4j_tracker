@@ -19,8 +19,6 @@ public class StartUI {
                 new EndAction()
         };
         new StartUI(myOut).init(input, tracker, actions);
-
-        SingleTracker singleTracker = SingleTracker.getSingle();
     }
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
