@@ -9,14 +9,14 @@ import static org.junit.Assert.assertThat;
 
 public class PhoneDictionaryTest {
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void whenFindByNameFalse() {
         PhoneDictionary p = new PhoneDictionary();
         p.add(
                 new Person("inav", "poporev", "8989", "gogopon")
         );
         ArrayList<Person> persons = p.search("potpo");
-        assertThat(persons.get(0).getName(), is("inav"));
+        assertThat(persons.isEmpty(), is(true));
     }
 
     @Test
