@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tracker {
-    List<Item> items = new ArrayList<>();
+    private final List<Item> items = new ArrayList<>();
     private int ids = 1;
 
 
@@ -25,8 +25,8 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-//        int ind = indexOf(id);
-        return indexOf(id) != -1 ? items.get(indexOf(id)) : null;
+        int index = indexOf(id);
+        return index != -1 ? items.get(index) : null;
     }
 
     public List<Item> findAll() {
@@ -45,25 +45,20 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        boolean result = false;
-        for (Item i : items) {
-            if (i.getId() == id) {
-                items.set(items.indexOf(i), item);
-                item.setId(id);
-                result = true;
-            }
+        int index = indexOf(id);
+        boolean b = index != 1;
+        if (b) {
+            items.set(index, item);
+            item.setId(id);
         }
-        return result;
+        return b;
     }
 
     public boolean delete(int id) {
-        boolean b = false;
-        for (Item item : items) {
-            if (item.getId() == id) {
-                items.remove(item);
-                b = true;
-                break;
-            }
+        int index = indexOf(id);
+        boolean b = index != 1;
+        if (b) {
+            items.remove(index);
         }
         return b;
     }
