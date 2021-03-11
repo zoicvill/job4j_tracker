@@ -6,7 +6,6 @@ import java.util.List;
 public class NotifyAccount {
     public static HashSet<Account> sendMail(List<Account> accounts) {
         HashSet<Account> rsl = new HashSet<>();
-        /* for-each accounts to HashSet; */
         for (Account account : accounts) {
             rsl.add(account);
         }
