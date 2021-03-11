@@ -15,7 +15,7 @@ public class PhoneDictionaryTest {
         p.add(
                 new Person("inav", "poporev", "8989", "gogopon")
         );
-        ArrayList<Person> persons = p.search("pofr");
+        ArrayList<Person> persons = p.search("potpo");
         assertThat(persons.get(0).getName(), is("inav"));
     }
 
@@ -25,7 +25,7 @@ public class PhoneDictionaryTest {
         phones.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
-        ArrayList<Person> persons = phones.search("Petr");
+        ArrayList<Person> persons = phones.search("48");
         assertThat(persons.get(0).getLastName(), is("Arsentev"));
     }
 
