@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConvertList {
-    public static List<Integer> convert(List<int[]> list) throws IndexOutOfBoundsException {
+    public static List<Integer> convert(List<int[]> list) {
         List<Integer> rsl = new ArrayList<>();
         for (int[] i : list) {
             for (int res : i) {
