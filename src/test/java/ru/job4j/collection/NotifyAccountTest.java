@@ -12,15 +12,33 @@ import static org.junit.Assert.assertThat;
 public class NotifyAccountTest {
 
     @Test
-    public void NotifyAccount() {
-        List<Account> list = Arrays.asList(
+    public void whenNotifyAccount() {
+        List<Account> accountsList = Arrays.asList(
                 new Account("123", "Viggo Mortinson", "ds54fs6awq"),
                 new Account("142", "Viggo Mortinson", "qewd65sa9")
         );
-        HashSet<Account> hashSet = new HashSet<>(Arrays.asList(
+        HashSet<Account> resultHash  = new HashSet<>(Arrays.asList(
                 new Account("123", "Viggo Mortinson", "ds54fs6awq"),
                 new Account("142", "Viggo Mortinson", "qewd65sa9")
         ));
-        assertThat(NotifyAccount.sendMail(list), is(hashSet));
+        assertThat(NotifyAccount.sendMail(accountsList), is(resultHash ));
     }
+
+    @Test
+    public void whenAccountDuplicate() {
+        List<Account> accountsList = Arrays.asList(
+                new Account("123", "Viggo Mortinson", "ds54fs6awq"),
+                new Account("123", "Viggo Mortinson", "ds54fs6awq"),
+                new Account("123", "Viggo Mortinson", "ds54fs6awq"),
+                new Account("142", "Viggo Mortinson", "qewd65sa9"),
+                new Account("142", "Viggo Mortinson", "qewd65sa9"),
+                new Account("142", "Viggo Mortinson", "qewd65sa9")
+        );
+        HashSet<Account> resultHash = new HashSet<>(Arrays.asList(
+                new Account("123", "Viggo Mortinson", "ds54fs6awq"),
+                new Account("142", "Viggo Mortinson", "qewd65sa9")
+        ));
+        assertThat(NotifyAccount.sendMail(accountsList), is(resultHash));
+    }
+
 }
