@@ -9,7 +9,7 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class NotifyAccountTest {
+public class NotifyAccountBillTest {
 
     @Test
     public void whenNotifyAccount() {
