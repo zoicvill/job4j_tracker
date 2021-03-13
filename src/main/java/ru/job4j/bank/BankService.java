@@ -14,9 +14,7 @@ public class BankService {
 
     public void addAccount(String passport, AccountBill accountBill) {
         User user = findByPassport(passport);
-        if (user == null) {
-            throw new NullPointerException("Exception: User is null!");
-        } else if (!userListMap.get(user).contains(accountBill)) {
+        if (user != null && !userListMap.get(user).contains(accountBill)) {
             userListMap.get(user).add(accountBill);
         }
     }
