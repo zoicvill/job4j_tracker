@@ -33,6 +33,14 @@ public class BankServiceTest {
         bank.addAccount(user.getPassport(), new AccountBill("5546", 150D));
         assertThat(bank.findByRequisite("3434", "5546").getBalance(), is(150D));
     }
+    @Test
+    public void findByRequisiteFail() {
+        User user = new User("3434", "Petr Arsentev");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        bank.addAccount(user.getPassport(), new AccountBill("5546", 150D));
+        assertNull(bank.findByRequisite("334", "556"));
+    }
 
     @Test
     public void transferMoney() {

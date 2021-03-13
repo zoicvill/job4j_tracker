@@ -14,10 +14,11 @@ public class BankService {
 
     public void addAccount(String passport, AccountBill accountBill) {
         User user = findByPassport(passport);
-        if (!userListMap.get(user).contains(accountBill)) {
+        if (user == null) {
+            throw new NullPointerException("Exception: User is null!");
+        } else if (!userListMap.get(user).contains(accountBill)) {
             userListMap.get(user).add(accountBill);
         }
-
     }
 
     public User findByPassport(String passport) {
@@ -48,7 +49,7 @@ public class BankService {
         double buf = 0.0;
         AccountBill srcAccount = findByRequisite(srcPassport, srcRequisite);
         AccountBill destAccount = findByRequisite(destPassport, destRequisite);
-        if (srcAccount != null && srcAccount.getBalance() >= amount) {
+        if (srcAccount != null && destAccount != null && srcAccount.getBalance() >= amount) {
             srcAccount.setBalance(srcAccount.getBalance() - amount);
             destAccount.setBalance(destAccount.getBalance() + amount);
             rsl = true;
