@@ -1,14 +1,20 @@
 package ru.job4j.collection;
 
-import java.util.Arrays;
 import java.util.Comparator;
 
 public class StringCompare implements Comparator<String> {
 
     @Override
-    public int compare(String o1, String o2) {
-        String[] s1 = o1.split("");
-        String[] s2 = o2.split("");
-        return Arrays.compare(s1,s2);
+    public int compare(String left, String right) {
+        int rsl = Integer.compare(left.length(), right.length());
+        int j = 0;
+        for (int i = 0; i < (Math.min(left.length(), right.length())); i++) {
+            if (left.charAt(i) != right.charAt(j)) {
+                rsl = Character.compare(left.charAt(i), right.charAt(j));
+                break;
+            }
+            j++;
+        }
+        return rsl;
     }
 }
