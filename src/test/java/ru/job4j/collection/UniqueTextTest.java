@@ -1,12 +1,11 @@
 package ru.job4j.collection;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
-class UniqueTextTest {
-
+public class UniqueTextTest {
     @Test
     public void isEquals() {
         String origin = "My cat eats a mouse and milk";
@@ -20,5 +19,4 @@ class UniqueTextTest {
         String text = "A mouse is eaten by a cat";
         assertThat(UniqueText.isEquals(origin, text), is(false));
     }
-
 }
