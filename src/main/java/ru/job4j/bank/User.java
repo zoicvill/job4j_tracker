@@ -29,14 +29,16 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
+        if (this != o) {
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            User user = (User) o;
+            return Objects.equals(passport, user.passport);
+        } else {
             return true;
-
-        if (o == null || getClass() != o.getClass()) {
-            return false;
         }
-        User user = (User) o;
-        return Objects.equals(passport, user.passport);
+
     }
 
     @Override
