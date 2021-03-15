@@ -18,6 +18,6 @@ notifications:
       -zoicvil@ya.ru
     on_success: never # default: change
     on_failure: always # default: always
-    env:
-      global:
-        - CODECOV_TOKEN="a8fd1d80-e599-4704-a53f-0db8f1106dc2"
+env:
+  global:
+    - CODECOV_TOKEN="a8fd1d80-e599-4704-a53f-0db8f1106dc2"
