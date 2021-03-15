@@ -3,8 +3,8 @@ package ru.job4j.collection;
 import java.util.Objects;
 
 public class Job implements Comparable<Job> {
-    private String name;
-    private int priority;
+    private final String name;
+    private final int priority;
 
     public Job(String name, int priority) {
         this.name = name;
@@ -26,8 +26,12 @@ public class Job implements Comparable<Job> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Job job = (Job) o;
         return priority == job.priority && Objects.equals(name, job.name);
     }

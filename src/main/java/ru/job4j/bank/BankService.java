@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BankService {
-    private Map<User, List<AccountBill>> userListMap = new HashMap<>();
+    private final Map<User, List<AccountBill>> userListMap = new HashMap<>();
 
     public void addUser(User user) {
         userListMap.putIfAbsent(user, new ArrayList<>());

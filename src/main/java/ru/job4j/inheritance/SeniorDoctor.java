@@ -1,6 +1,6 @@
 package ru.job4j.inheritance;
 
-public class SeniorDoctor extends Doctor{
+public class SeniorDoctor extends Doctor {
 
     private String grosSalary;
 

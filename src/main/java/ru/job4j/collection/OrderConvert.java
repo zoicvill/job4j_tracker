@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class OrderConvert {
-    public static HashMap<String, Order> mapProcess(List<Order> orders){
+    public static HashMap<String, Order> mapProcess(List<Order> orders) {
         HashMap<String, Order> map = new HashMap<>();
         for (Order order : orders) {
             map.put(order.getNumber(), order);

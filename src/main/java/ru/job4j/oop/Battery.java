@@ -3,13 +3,8 @@ package ru.job4j.oop;
 public class Battery {
     private int load;
 
-    public Battery(int per){
+    public Battery(int per) {
         this.load = per;
-    }
-
-    public void exchange(Battery another){
-        another.load += this.load;
-        this.load = 0;
     }
 
     public static void main(String[] args) {
@@ -18,5 +13,10 @@ public class Battery {
         System.out.println(height.load + " " + low.load);
         height.exchange(low);
         System.out.println(height.load + " " + low.load);
+    }
+
+    public void exchange(Battery another) {
+        another.load += this.load;
+        this.load = 0;
     }
 }

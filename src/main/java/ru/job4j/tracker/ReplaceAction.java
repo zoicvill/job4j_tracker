@@ -19,7 +19,9 @@ public class ReplaceAction implements UserAction {
         Item editItem = new Item(firstId, name);
         if (tracker.replace(firstId, editItem)) {
             output.outPrintln("Edit true ");
-        } else output.outPrintln("Edit false");
+        } else {
+            output.outPrintln("Edit false");
+        }
         return true;
     }
 }

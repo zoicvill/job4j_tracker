@@ -8,16 +8,13 @@ public class FindEl {
                 return i;
             }
         }
-        if (rsl == -1) {
-            throw new ElementNotFoundException("Элемент не найден");
-        }
+        throw new ElementNotFoundException("Элемент не найден");
 
-        return rsl;
     }
 
     public static void main(String[] args) throws ElementNotFoundException {
         try {
-            FindEl.indexOf(new String[]{"fg", "ss", "gg", "hh"}, "ss4");
+            FindEl.indexOf(new String[] {"fg", "ss", "gg", "hh"}, "ss4");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }

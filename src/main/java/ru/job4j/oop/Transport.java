@@ -6,7 +6,7 @@ public class Transport {
         Vehicle potyah = new Potyah();
         Vehicle bus = new Bus();
 
-        Vehicle[] masVeh = new Vehicle[]{litak, potyah, bus};
+        Vehicle[] masVeh = new Vehicle[] {litak, potyah, bus};
         for (Vehicle v : masVeh) {
             v.move();
             v.passengers();

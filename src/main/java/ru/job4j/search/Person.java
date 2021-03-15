@@ -1,10 +1,10 @@
 package ru.job4j.search;
 
 public class Person {
-    private String name;
-    private String lastName;
-    private String phone;
-    private String address;
+    private final String name;
+    private final String lastName;
+    private final String phone;
+    private final String address;
 
     public Person(String name, String lastName, String phone, String address) {
         this.name = name;

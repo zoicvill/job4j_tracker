@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
 public class Fix {
-    private String desc;
+    private final String desc;
 
     public Fix(String text) {
         this.desc = text;

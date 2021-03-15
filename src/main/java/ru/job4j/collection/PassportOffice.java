@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PassportOffice {
-    private Map<String, Citizen> citizens = new HashMap<>();
+    private final Map<String, Citizen> citizens = new HashMap<>();
 
-    public boolean add(Citizen citi){
+    public boolean add(Citizen citi) {
         boolean rez = false;
         if (!citizens.containsKey(citi.getPassport())) {
             citizens.put(citi.getPassport(), citi);
@@ -16,7 +16,7 @@ public class PassportOffice {
     }
 
     public Citizen get(String passport) {
-       return citizens.get(passport);
+        return citizens.get(passport);
 
     }
 }

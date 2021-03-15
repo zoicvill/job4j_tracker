@@ -4,7 +4,7 @@ import java.util.List;
 
 public final class SingleTracker {
     private static SingleTracker single = null;
-    private Tracker tracker = new Tracker();
+    private final Tracker tracker = new Tracker();
 
     private SingleTracker() {
     }

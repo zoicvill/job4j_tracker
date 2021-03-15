@@ -17,7 +17,9 @@ public class DeletedAction implements UserAction {
         int id = input.askInt("Enter id: ");
         if (tracker.delete(id)) {
             output.outPrintln("Deleted true ");
-        } else output.outPrintln("Deleted false");
+        } else {
+            output.outPrintln("Deleted false");
+        }
         return true;
     }
 }

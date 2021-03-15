@@ -18,7 +18,9 @@ public class FindActionById implements UserAction {
         Item finder = tracker.findById(id);
         if (finder != null) {
             output.outPrintln(finder.toString());
-        } else output.outPrintln("Find false");
+        } else {
+            output.outPrintln("Find false");
+        }
         return true;
     }
 }

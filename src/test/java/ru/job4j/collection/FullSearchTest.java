@@ -14,7 +14,7 @@ public class FullSearchTest {
 
     @Test
 
-   public void whenFullSearch(){
+    public void whenFullSearch() {
         List<Task> tasks = Arrays.asList(
                 new Task("1", "First desc"),
                 new Task("2", "Second desc"),

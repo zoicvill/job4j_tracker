@@ -1,19 +1,20 @@
 package ru.job4j.inheritance;
 
 public final class Product {
-    private String name;
-    private int price;
+    private final String name;
+    private final int price;
 
     public Product(String name, int price) {
         this.name = name;
         this.price = price;
     }
 
-    public int price(){
+    public int price() {
         return price - discount();
 
     }
-    public int discount(){
+
+    public int discount() {
         return 0;
     }
 

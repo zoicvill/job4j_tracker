@@ -29,8 +29,12 @@ public class AccountBill {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         AccountBill accountBill = (AccountBill) o;
         return Objects.equals(requisite, accountBill.requisite);
     }

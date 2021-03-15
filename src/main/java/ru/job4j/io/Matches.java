@@ -16,7 +16,9 @@ public class Matches {
                 count -= matches;
                 turn = !turn;
 
-            } else if (matches > 3) System.out.println("Не правильно, возьмите спички от 1 до 3");
+            } else if (matches > 3) {
+                System.out.println("Не правильно, возьмите спички от 1 до 3");
+            }
             System.out.println("Осталось спичек " + count);
 
         }

@@ -12,7 +12,7 @@ public class Doctor extends Profession {
         super(name, surname, education, birthday);
     }
 
-    void salaryMy(){
+    void salaryMy() {
         System.out.println("my salary " + salary);
     }
 }

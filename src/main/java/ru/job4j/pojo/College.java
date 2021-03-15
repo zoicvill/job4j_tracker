@@ -8,6 +8,7 @@ public class College {
         student.setName("Feofan");
 
         System.out.println("My name is " + student.getName() + " I'm "
-                + student.getAge() + " years old I'm a " + student.getCourse() +"th year student and I'm an alcoholic");
+                + student.getAge() + " years old I'm a " + student.getCourse() +
+                "th year student and I'm an alcoholic");
     }
 }

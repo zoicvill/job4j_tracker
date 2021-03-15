@@ -3,8 +3,8 @@ package ru.job4j.collection;
 import java.util.Objects;
 
 public class Order {
-    private String number;
-    private String name;
+    private final String number;
+    private final String name;
 
     public Order(String number, String name) {
         this.number = number;
@@ -25,8 +25,12 @@ public class Order {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Order order = (Order) o;
         return Objects.equals(number, order.number) && Objects.equals(name, order.name);
     }
