@@ -45,12 +45,11 @@ public class BankService {
      */
 
     public User findByPassport(String passport) {
-        for (User user : userListMap.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                return user;
-            }
-        }
-        return null;
+        return userListMap.keySet()
+                .stream()
+                .filter(user -> user.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -64,12 +63,11 @@ public class BankService {
     public AccountBill findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
-            List<AccountBill> bill = userListMap.get(user);
-            for (AccountBill accountBill : bill) {
-                if (accountBill.getRequisite().equals(requisite)) {
-                    return accountBill;
-                }
-            }
+            return userListMap.get(user).stream()
+                    .filter(accountBill ->
+                            accountBill.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
         return null;
     }
