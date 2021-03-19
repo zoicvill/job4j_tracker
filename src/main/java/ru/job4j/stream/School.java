@@ -9,10 +9,11 @@ public class School {
     public Map<String, Student> collect(List<Student> students, Predicate<Student> predicate) {
         return students.stream()
                 .filter(predicate)
-                .distinct()
                 .collect(Collectors.toMap(
                         Student::getSurname,
-                        s -> s
+                        s -> s,
+                        (s1, s2) -> s1
+
                 ));
     }
 }
