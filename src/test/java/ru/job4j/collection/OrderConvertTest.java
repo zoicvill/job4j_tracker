@@ -3,7 +3,6 @@ package ru.job4j.collection;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class OrderConvertTest {
 
     @Test
     public void whenConvertTest() {
-        List<Order> list = Arrays.asList(new Order("0990", "iuiuiu"),
+        List<Order> list = List.of(new Order("0990", "iuiuiu"),
                 new Order("090", "idfdfu"));
         HashMap<String, Order> map = OrderConvert.mapProcess(list);
         assertThat(map.get("0990"), is(new Order("0990", "iuiuiu")));
