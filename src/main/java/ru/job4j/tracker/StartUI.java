@@ -1,7 +1,9 @@
 package ru.job4j.tracker;
 
 
-public class StartUI {
+public class StartUI implements Callback{
+    private final ExitAction exitAction = new ExitAction(this);
+    public boolean run = true;
     private final Output output;
 
     public StartUI(Output output) {
@@ -22,10 +24,10 @@ public class StartUI {
     }
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
-        boolean run = true;
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
+            exitAction.exit(select);
             if (select < 0 || select >= actions.length) {
                 output.outPrintln("Ошибка ввода введите число от 0 до " + (actions.length - 1));
                 continue;
@@ -42,4 +44,9 @@ public class StartUI {
         }
     }
 
+    @Override
+    public void execute(int exit) {
+        Integer six = 6;
+        run = !six.equals(exit);
+    }
 }
